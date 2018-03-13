@@ -46,7 +46,7 @@ public class InitializrMetadataJsonMapperTests {
 				.addDependencyGroup("foo", "one", "two").build();
 		String json = jsonMapper.write(metadata, null);
 		JsonNode result = objectMapper.readTree(json);
-		assertEquals("/foo.zip?type=foo{&dependencies,packaging,javaVersion,language,bootVersion," +
+        assertEquals("/foo.zip?type=foo{&dependencies,packaging,javaVersion,language,configuration,bootVersion," +
 				"groupId,artifactId,version,name,description,packageName}", get(result, "_links.foo.href"));
 	}
 
@@ -58,7 +58,7 @@ public class InitializrMetadataJsonMapperTests {
 		String json = jsonMapper.write(metadata, "http://server:8080/my-app");
 		JsonNode result = objectMapper.readTree(json);
 		assertEquals("http://server:8080/my-app/foo.zip?type=foo{&dependencies,packaging,javaVersion," +
-						"language,bootVersion,groupId,artifactId,version,name,description,packageName}",
+						"language,configuration,bootVersion,groupId,artifactId,version,name,description,packageName}",
 				get(result, "_links.foo.href"));
 	}
 

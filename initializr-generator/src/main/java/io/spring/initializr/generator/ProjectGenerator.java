@@ -254,7 +254,9 @@ public class ProjectGenerator {
 
 		File resources = new File(dir, "src/main/resources");
 		resources.mkdirs();
-		writeText(new File(resources, "application.properties"), "");
+
+        String configurationExtension = ("yaml".equals(request.getConfiguration()) ? "yaml" : "properties");
+        writeText(new File(resources, "application." + configurationExtension), "");
 
 		if (request.hasWebFacet()) {
 			new File(dir, "src/main/resources/templates").mkdirs();

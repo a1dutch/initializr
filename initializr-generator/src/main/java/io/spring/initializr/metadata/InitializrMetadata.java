@@ -51,6 +51,9 @@ public class InitializrMetadata {
 	private final SingleSelectCapability languages = new SingleSelectCapability("language",
 			"Language", "programming language");
 
+    private final SingleSelectCapability configurations = new SingleSelectCapability("configuration",
+        "Configuration", "configuration file");
+
 	private final TextCapability name = new TextCapability("name", "Name",
 			"project name (infer application name)");
 
@@ -103,6 +106,10 @@ public class InitializrMetadata {
 		return languages;
 	}
 
+    public SingleSelectCapability getConfigurations() {
+        return configurations;
+    }
+
 	public TextCapability getName() {
 		return name;
 	}
@@ -139,6 +146,7 @@ public class InitializrMetadata {
 		this.packagings.merge(other.packagings);
 		this.javaVersions.merge(other.javaVersions);
 		this.languages.merge(other.languages);
+        this.configurations.merge(other.configurations);
 		this.name.merge(other.name);
 		this.description.merge(other.description);
 		this.groupId.merge(other.groupId);
@@ -253,6 +261,7 @@ public class InitializrMetadata {
 		defaults.put("packaging", defaultId(packagings));
 		defaults.put("javaVersion", defaultId(javaVersions));
 		defaults.put("language", defaultId(languages));
+        defaults.put("configuration", defaultId(configurations));
 		defaults.put("groupId", groupId.getContent());
 		defaults.put("artifactId", artifactId.getContent());
 		defaults.put("version", version.getContent());

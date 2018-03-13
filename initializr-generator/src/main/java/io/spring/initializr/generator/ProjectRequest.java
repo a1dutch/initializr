@@ -186,6 +186,13 @@ public class ProjectRequest extends BasicProjectRequest {
 						+ getLanguage() + "' check project metadata");
 			}
 		}
+        if (getConfiguration() != null) {
+            DefaultMetadataElement configuration = metadata.getConfigurations().get(getConfiguration());
+            if (configuration == null) {
+                throw new InvalidProjectRequestException("Unknown configuration '"
+                    + getConfiguration() + "' check project metadata");
+            }
+        }
 
 		if (!StringUtils.hasText(getApplicationName())) {
 			setApplicationName(

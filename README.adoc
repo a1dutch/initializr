@@ -91,6 +91,7 @@ service exposes an arbitrary number of supported types and these are available i
 * `javaVersion`: the language level (e.g. `1.8`).
 * `bootVersion`: the Spring Boot version to use (e.g. `1.2.0.RELEASE`).
 * `language`: the programming language to use (e.g. `java`).
+* `configuration`: the configuration file to use (e.g. `properties`).
 * `packaging`: the packaging of the project (e.g. `jar`).
 * `applicationName`: the name of the application class (inferred by the `name`
 attribute by default).

@@ -41,6 +41,7 @@ public class BasicProjectRequest {
 	private String packaging;
 	private String applicationName;
 	private String language;
+    private String configuration;
 	private String packageName;
 	private String javaVersion;
 
@@ -142,6 +143,14 @@ public class BasicProjectRequest {
 	public void setLanguage(String language) {
 		this.language = language;
 	}
+
+    public String getConfiguration() {
+        return configuration;
+    }
+
+    public void setConfiguration(String configuration) {
+        this.configuration = configuration;
+    }
 
 	public String getPackageName() {
 		if (StringUtils.hasText(packageName)) {
